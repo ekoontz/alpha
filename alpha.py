@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # read a list of words from the file 'dict.txt', in alphabetical order,
 # and find a hypothesis of the order of the letters in the alphabet.
