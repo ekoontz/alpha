@@ -68,6 +68,7 @@ def ordering():
             print("adding root: {}".format(r))
             all_in_order = all_in_order + [r]
             new_edges = edges.difference(filter(lambda edge: edge[0] == r, edges))
+            print("edges left: {}".format(new_edges))
             if len(new_edges) == 0:
                 for edge in edges:
                     all_in_order = all_in_order + [edge[1]]
