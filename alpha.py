@@ -38,7 +38,12 @@ def in_order(node,edges):
     descendents_in_order = remove_duplicates(descendents_in_order)
     return descendents_in_order
 
+# given two words, find the position in the first word where the character at this position
+# in the first word is different from the character at that postiion in the second word.
+# return -1 if the second word is shorter than the first word, or is identical to the first word.
 def find_position_of_first_difference(word1,word2):
+    if (word1 == word2):
+        return -1
     for i in range(0,len(word1)):
         if (i == len(word2)):
             return -1
