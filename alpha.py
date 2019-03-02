@@ -51,8 +51,8 @@ def get_edges(words):
         print("comparing: {} to next: {}".format(word1,word2))
         position = find_position_of_first_difference(word1,word2)
         if (position > -1):
-            print("adding edge: {},{}".format(word1[position],word2[position]))
             if (word1[position] != word2[position]):
+                print("adding edge: {},{}".format(word1[position],word2[position]))
                 edges = add_edge(edges,word1[position],word2[position])
     return edges
 
@@ -63,11 +63,13 @@ def ordering():
     all_in_order = []
     while(len(edges) > 0):
         for r in roots_of(edges):
-            print("adding root: {}".format(r))
+            print("root: {}".format(r))
             all_in_order = all_in_order + [r]
             new_edges = edges.difference(filter(lambda edge: edge[0] == r, edges))
-            print("edges left: {}".format(new_edges))
             if len(new_edges) == 0:
+                # no more new edges left: we've printed out every letter located
+                # at the 'from' of any edge.
+                # last thing to do is print the 'to' for the last remaining edges.
                 for edge in edges:
                     all_in_order = all_in_order + [edge[1]]
             edges = new_edges
