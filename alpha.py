@@ -15,8 +15,6 @@ def roots_of(edges):
 def immediate_children_of(node,edges):
     return map(lambda edge: edge[1],filter(lambda edge: edge[0] == node, list(edges)))
 
-descendents = {}
-
 # take a list and return the elements of the list except without duplicates.
 def remove_duplicates(input):
     seen = set()
