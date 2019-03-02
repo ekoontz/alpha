@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+# read a list of words from the file 'dict.txt', in alphabetical order,
+# and find a hypothesis of the order of the letters in the alphabet.
+
 def add_edge(edges,node1,node2):
     edges = edges.union({(node1,node2)})
     return edges
@@ -75,3 +78,10 @@ def ordering():
             edges = new_edges
 
     print(all_in_order)
+
+
+def main():
+    ordering()
+
+if __name__ == '__main__':
+    main()
